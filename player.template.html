@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>똑... 똑... 똑... · 게임 규칙</title>
+<style>
+@font-face{font-family:Pretendard;src:url(data:font/woff2;base64,__FONT__) format('woff2');font-weight:100 900;font-display:swap}
+:root{color-scheme:dark;--paper:#eee9dd;--ink:#24231f;--muted:#aaa79d}
+*{box-sizing:border-box}body{margin:0;background:#191a18;color:var(--paper);font-family:Pretendard,system-ui,sans-serif}button,input,select{font:inherit}button,select{color:var(--paper);background:#282925;border:1px solid #55564f;border-radius:5px;min-height:44px;padding:0 14px;cursor:pointer}button:hover,select:hover{border-color:var(--paper)}button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #ddd6bb;outline-offset:4px}button.primary{background:var(--paper);color:var(--ink);font-weight:700}button:disabled{opacity:.55;cursor:wait}input{accent-color:#dcd5c1;cursor:pointer}
+header{max-width:1400px;margin:auto;padding:22px 24px 16px;display:flex;justify-content:space-between;gap:16px;align-items:baseline}header h1{font-size:20px;letter-spacing:-.4px;margin:0}header p{color:var(--muted);font-size:13px;margin:0}.layout{max-width:1400px;margin:0 auto;padding:0 24px 28px;display:block}.viewer{min-width:0}.screen{position:relative;aspect-ratio:16/9;background:var(--paper);width:100%;max-height:none;margin:auto;max-width:100%;box-shadow:0 12px 35px #0005}canvas{display:block;width:100%;height:100%;background:var(--paper)}.timebar{display:flex;align-items:center;gap:12px;margin:16px 0 10px}.timebar input{width:100%;min-width:0;height:24px}.time{font-variant-numeric:tabular-nums;font-size:13px;white-space:nowrap;min-width:88px}.controls{display:flex;flex-wrap:wrap;gap:8px}.controls .primary{min-width:104px}.controls select{width:91px}.sound{display:flex;align-items:center;gap:5px;margin-left:auto}.sound input{width:68px}.state{font-size:12px;min-height:18px;color:var(--muted);margin:12px 0 0;line-height:1.5}.panel{padding:32px 0;max-width:900px;margin:auto}.eyebrow{font-size:12px;letter-spacing:.12em;color:var(--muted)}.panel h2{font-size:32px;line-height:1.4;margin:17px 0 26px;word-break:keep-all}.panel p{font-size:17px;line-height:1.85;word-break:keep-all}.note{color:#b7b4a9!important;font-size:14px!important;border-left:2px solid #757569;padding-left:16px}.chapter-label{display:block;font-size:13px;color:var(--muted);margin:30px 0 10px}.chapter{width:100%;padding:10px 12px;word-break:keep-all}.spec{border-top:1px solid #45463e;padding-top:20px;margin-top:30px;font-size:13px;line-height:1.8;color:var(--muted)}details{border-top:1px solid #45463e;margin-top:20px;padding-top:20px}summary{cursor:pointer;font-size:14px}#transcript{max-height:450px;overflow:auto;margin-top:16px}#transcript article{padding:12px 0 20px;border-bottom:1px solid #45463e}#transcript h3{font-size:16px;margin:0 0 8px}#transcript p{font-size:14px;margin:6px 0;line-height:1.7}#transcript button{min-height:36px;font-size:12px}.fullscreen:fullscreen{display:flex;align-items:center;justify-content:center;background:#141513}.fullscreen:fullscreen canvas{width:min(100vw,177.777vh);height:auto;max-height:100vh;aspect-ratio:16/9;object-fit:contain}
+@media(max-width:720px){header{padding:16px 16px 12px}header h1{font-size:17px}header p{font-size:11px}.layout{display:block;padding:0 16px 25px}.screen{max-height:none;max-width:100%}.viewer{max-width:none;margin:auto}.panel{max-width:900px;margin:28px auto 0;border-top:1px solid #45463e;padding-top:24px}.panel h2{font-size:26px}.controls{gap:6px}button,select{padding:0 10px}.controls .primary{min-width:84px}.sound input{width:52px}.state{margin-top:9px}.spec{font-size:12px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><h1>똑... 똑... 똑...</h1><p>게임 규칙 · 모션 그래픽</p></header>
+<main class="layout">
+ <section class="viewer" aria-label="규칙 영상 재생">
+  <div class="screen fullscreen" id="screen"><canvas id="canvas" width="1920" height="1080" aria-label="자바스크립트 모션 그래픽 규칙 영상"></canvas></div>
+  <div class="timebar"><input id="seek" type="range" min="0" max="300" step="0.0333333333" value="0" aria-label="영상 재생 위치"><span class="time" id="time">0:00 / 5:00</span></div>
+  <div class="controls">
+   <button class="primary" id="play" disabled>준비 중</button><button id="restart" aria-label="처음부터 다시 보기">처음</button>
+   <select id="speed" aria-label="재생 속도"><option value="0.75">0.75배</option><option value="1" selected>1배</option><option value="1.25">1.25배</option><option value="1.5">1.5배</option></select>
+   <button id="full" aria-label="전체 화면">전체 화면</button>
+   <div class="sound"><button id="mute" aria-label="소리 끄기">소리 켬</button><input id="volume" type="range" min="0" max="1" step=".05" value="0.8" aria-label="음량"></div>
+  </div>
+  <p class="state" id="state" role="status">글꼴과 영상을 준비하고 있습니다.</p>
+ </section>
+ <aside class="panel">
+  <div class="eyebrow" id="chapterName">플레이 가이드</div><h2 id="title">세 번의 노크.<br>다섯 사람의 추리.</h2>
+  <p id="caption"></p><p class="note" id="note"></p>
+  <label class="chapter-label" for="chapters">원하는 규칙으로 이동</label><select class="chapter" id="chapters"></select>
+  <div class="spec">가로 16:9 · 5분 · 30fps<br>텍스트 · 배경음 · 효과음 / 나레이션 없음<br>설명서 기준: 2026.09.20 수정본</div>
+  <details><summary>전체 규칙 자막 읽기</summary><div id="transcript"></div></details>
+ </aside>
+</main>
+<script>__STORYBOARD__</script><script>__ENGINE__</script>
+<script>
+(function(){'use strict';
+const D=TTOK_RULES,R=TTOK_RENDER,$=id=>document.getElementById(id),canvas=$('canvas'),ctx=canvas.getContext('2d',{alpha:false});
+const sound=new Audio('data:audio/mp4;base64,__AUDIO__');sound.preload='auto';sound.volume=.8;sound.loop=false;
+let ready=false,playing=false,useAudio=true,position=0,lastFrame=-1,lastShot=-1,base=0,origin=0,speed=1;
+const format=v=>Math.floor(v/60)+':'+String(Math.floor(v%60)).padStart(2,'0');
+function panel(i){if(i===lastShot)return;lastShot=i;const s=D.shots[i];$('chapterName').textContent=String(i+1).padStart(2,'0')+' / '+s.chapter;$('title').replaceChildren();s.title.forEach((v,j)=>{if(j)$('title').append(document.createElement('br'));$('title').append(document.createTextNode(v));});$('caption').textContent=s.caption.join(' ');$('note').textContent=s.note;$('chapters').value=String(i);}
+function paint(force=false){const frame=Math.min(D.duration*D.fps-1,Math.floor(position*D.fps));if(force||frame!==lastFrame){R.render(ctx,frame/D.fps);lastFrame=frame;}panel(Math.min(29,Math.floor(position/10)));$('seek').value=position;$('time').textContent=format(position)+' / 5:00';}
+function stop(){if(playing){position=useAudio?sound.currentTime:Math.min(300,base+(performance.now()-origin)*speed/1000);}playing=false;sound.pause();$('play').textContent=position>=299.99?'다시 보기':'재생';paint(true);}
+async function start(){if(!ready)return;if(position>=299.99)jump(0);sound.playbackRate=speed;sound.currentTime=position;try{await sound.play();useAudio=true;}catch(err){useAudio=false;$('state').textContent='소리를 재생하지 못해 화면만 재생합니다. MP4에서도 소리를 들을 수 있습니다.';}base=position;origin=performance.now();playing=true;$('play').textContent='일시 정지';if(useAudio)$('state').textContent='노크와 카드 효과음이 포함된 배경음이 재생됩니다.';}
+function jump(value){position=Math.max(0,Math.min(300,Number(value)));base=position;origin=performance.now();if(sound.readyState>0||Number.isFinite(sound.duration))sound.currentTime=Math.min(position,299.999);lastFrame=-1;if(position>=300){playing=false;sound.pause();$('play').textContent='다시 보기';}paint(true);}
+function tick(now){if(playing){position=useAudio?sound.currentTime:Math.min(300,base+(now-origin)*speed/1000);if(position>=299.999){position=300;playing=false;sound.pause();$('play').textContent='다시 보기';}paint();}requestAnimationFrame(tick);}
+D.shots.forEach(s=>{let o=document.createElement('option');o.value=s.index;o.textContent=format(s.start)+'  '+s.chapter;$('chapters').append(o);let a=document.createElement('article'),h=document.createElement('h3');h.textContent=format(s.start)+' · '+s.chapter;a.append(h);for(const v of [s.title.join(' '),s.caption.join(' '),s.note]){let p=document.createElement('p');p.textContent=v;a.append(p);}let b=document.createElement('button');b.textContent='이 장면 보기';b.addEventListener('click',()=>{jump(s.start);$('screen').scrollIntoView({block:'start'});});a.append(b);$('transcript').append(a);});
+$('play').addEventListener('click',()=>playing?stop():start());$('restart').addEventListener('click',()=>{stop();jump(0);});$('seek').addEventListener('input',e=>jump(e.target.value));$('chapters').addEventListener('change',e=>jump(Number(e.target.value)*10));
+$('speed').addEventListener('change',e=>{if(playing&&!useAudio){position=base+(performance.now()-origin)*speed/1000;base=position;origin=performance.now();}speed=Number(e.target.value);sound.playbackRate=speed;});
+$('mute').addEventListener('click',()=>{sound.muted=!sound.muted;$('mute').textContent=sound.muted?'소리 끔':'소리 켬';$('mute').setAttribute('aria-label',sound.muted?'소리 켜기':'소리 끄기');});$('volume').addEventListener('input',e=>{sound.volume=Number(e.target.value);});
+$('full').addEventListener('click',async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else if($('screen').requestFullscreen)await $('screen').requestFullscreen();else $('screen').scrollIntoView({block:'center'});}catch{$('screen').scrollIntoView({block:'center'});}});
+sound.addEventListener('ended',()=>{position=300;playing=false;$('play').textContent='다시 보기';paint(true);});
+document.addEventListener('keydown',e=>{if(['INPUT','SELECT','BUTTON','TEXTAREA'].includes(document.activeElement.tagName))return;if(e.code==='Space'){e.preventDefault();playing?stop():start();}else if(e.code==='ArrowRight')jump(position+5);else if(e.code==='ArrowLeft')jump(position-5);});
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&playing)stop();});
+Promise.all([document.fonts.load('400 28px Pretendard'),document.fonts.load('700 45px Pretendard')]).then(()=>{ready=true;paint(true);$('play').disabled=false;$('play').textContent='재생';$('state').textContent='재생을 누르면 음악과 함께 시작합니다. 휴대폰에서는 가로 전체 화면을 권장합니다.';}).catch(()=>{ready=true;paint(true);$('play').disabled=false;$('play').textContent='재생';$('state').textContent='기본 글꼴로 준비했습니다.';});
+requestAnimationFrame(tick);
+window.TTOK_PLAYER_DEBUG={jump,getState:()=>({ready,playing,position,lastFrame,lastShot,speed}),sound};
+})();
+</script>
+</body></html>

@@ -1,0 +1,546 @@
+[
+  {
+    "time": 1.2,
+    "type": "knock"
+  },
+  {
+    "time": 2.05,
+    "type": "knock"
+  },
+  {
+    "time": 2.9,
+    "type": "knock"
+  },
+  {
+    "time": 10.07,
+    "type": "paper"
+  },
+  {
+    "time": 20.07,
+    "type": "paper"
+  },
+  {
+    "time": 20.6,
+    "type": "card"
+  },
+  {
+    "time": 20.9,
+    "type": "card"
+  },
+  {
+    "time": 21.2,
+    "type": "card"
+  },
+  {
+    "time": 21.5,
+    "type": "card"
+  },
+  {
+    "time": 23.4,
+    "type": "card"
+  },
+  {
+    "time": 30.07,
+    "type": "paper"
+  },
+  {
+    "time": 30.7,
+    "type": "card"
+  },
+  {
+    "time": 31.1,
+    "type": "card"
+  },
+  {
+    "time": 31.5,
+    "type": "card"
+  },
+  {
+    "time": 31.9,
+    "type": "card"
+  },
+  {
+    "time": 32.3,
+    "type": "card"
+  },
+  {
+    "time": 40.07,
+    "type": "paper"
+  },
+  {
+    "time": 41.6,
+    "type": "card"
+  },
+  {
+    "time": 42.5,
+    "type": "card"
+  },
+  {
+    "time": 43.3,
+    "type": "card"
+  },
+  {
+    "time": 50.07,
+    "type": "paper"
+  },
+  {
+    "time": 50.9,
+    "type": "card"
+  },
+  {
+    "time": 51.5,
+    "type": "card"
+  },
+  {
+    "time": 52.8,
+    "type": "card"
+  },
+  {
+    "time": 60.07,
+    "type": "paper"
+  },
+  {
+    "time": 61.8,
+    "type": "card"
+  },
+  {
+    "time": 63.6,
+    "type": "card"
+  },
+  {
+    "time": 70.07,
+    "type": "paper"
+  },
+  {
+    "time": 70.8,
+    "type": "card"
+  },
+  {
+    "time": 71.1,
+    "type": "card"
+  },
+  {
+    "time": 71.4,
+    "type": "card"
+  },
+  {
+    "time": 71.7,
+    "type": "card"
+  },
+  {
+    "time": 72.0,
+    "type": "card"
+  },
+  {
+    "time": 72.3,
+    "type": "card"
+  },
+  {
+    "time": 72.6,
+    "type": "card"
+  },
+  {
+    "time": 80.07,
+    "type": "paper"
+  },
+  {
+    "time": 80.8,
+    "type": "card"
+  },
+  {
+    "time": 82.4,
+    "type": "card"
+  },
+  {
+    "time": 84.5,
+    "type": "card"
+  },
+  {
+    "time": 90.07,
+    "type": "paper"
+  },
+  {
+    "time": 90.8,
+    "type": "card"
+  },
+  {
+    "time": 94.2,
+    "type": "card"
+  },
+  {
+    "time": 100.07,
+    "type": "paper"
+  },
+  {
+    "time": 101.3,
+    "type": "card"
+  },
+  {
+    "time": 101.65,
+    "type": "card"
+  },
+  {
+    "time": 102.0,
+    "type": "card"
+  },
+  {
+    "time": 102.35,
+    "type": "card"
+  },
+  {
+    "time": 102.7,
+    "type": "card"
+  },
+  {
+    "time": 110.07,
+    "type": "paper"
+  },
+  {
+    "time": 111.0,
+    "type": "card"
+  },
+  {
+    "time": 112.45,
+    "type": "card"
+  },
+  {
+    "time": 114.3,
+    "type": "card"
+  },
+  {
+    "time": 116.0,
+    "type": "card"
+  },
+  {
+    "time": 120.07,
+    "type": "paper"
+  },
+  {
+    "time": 121.0,
+    "type": "card"
+  },
+  {
+    "time": 122.3,
+    "type": "card"
+  },
+  {
+    "time": 124.2,
+    "type": "card"
+  },
+  {
+    "time": 125.9,
+    "type": "card"
+  },
+  {
+    "time": 130.07,
+    "type": "paper"
+  },
+  {
+    "time": 132.4,
+    "type": "paper"
+  },
+  {
+    "time": 132.5,
+    "type": "card"
+  },
+  {
+    "time": 133.45,
+    "type": "card"
+  },
+  {
+    "time": 140.07,
+    "type": "paper"
+  },
+  {
+    "time": 140.7,
+    "type": "card"
+  },
+  {
+    "time": 142.25,
+    "type": "card"
+  },
+  {
+    "time": 143.8,
+    "type": "card"
+  },
+  {
+    "time": 145.35,
+    "type": "card"
+  },
+  {
+    "time": 146.9,
+    "type": "card"
+  },
+  {
+    "time": 150.07,
+    "type": "paper"
+  },
+  {
+    "time": 151.2,
+    "type": "card"
+  },
+  {
+    "time": 151.9,
+    "type": "card"
+  },
+  {
+    "time": 152.6,
+    "type": "card"
+  },
+  {
+    "time": 153.3,
+    "type": "card"
+  },
+  {
+    "time": 154.0,
+    "type": "card"
+  },
+  {
+    "time": 160.07,
+    "type": "paper"
+  },
+  {
+    "time": 161.0,
+    "type": "card"
+  },
+  {
+    "time": 161.3,
+    "type": "card"
+  },
+  {
+    "time": 161.6,
+    "type": "card"
+  },
+  {
+    "time": 161.9,
+    "type": "card"
+  },
+  {
+    "time": 170.07,
+    "type": "paper"
+  },
+  {
+    "time": 171.85,
+    "type": "card"
+  },
+  {
+    "time": 172.95,
+    "type": "card"
+  },
+  {
+    "time": 174.05,
+    "type": "card"
+  },
+  {
+    "time": 175.15,
+    "type": "card"
+  },
+  {
+    "time": 176.25,
+    "type": "card"
+  },
+  {
+    "time": 180.07,
+    "type": "paper"
+  },
+  {
+    "time": 182.96,
+    "type": "paper"
+  },
+  {
+    "time": 183.12,
+    "type": "card"
+  },
+  {
+    "time": 185.85,
+    "type": "paper"
+  },
+  {
+    "time": 186.02,
+    "type": "card"
+  },
+  {
+    "time": 190.07,
+    "type": "paper"
+  },
+  {
+    "time": 191.0,
+    "type": "card"
+  },
+  {
+    "time": 193.8,
+    "type": "card"
+  },
+  {
+    "time": 195.9,
+    "type": "card"
+  },
+  {
+    "time": 200.07,
+    "type": "paper"
+  },
+  {
+    "time": 203.2,
+    "type": "card"
+  },
+  {
+    "time": 210.07,
+    "type": "paper"
+  },
+  {
+    "time": 211.0,
+    "type": "card"
+  },
+  {
+    "time": 211.85,
+    "type": "card"
+  },
+  {
+    "time": 212.7,
+    "type": "card"
+  },
+  {
+    "time": 214.4,
+    "type": "card"
+  },
+  {
+    "time": 220.07,
+    "type": "paper"
+  },
+  {
+    "time": 221.0,
+    "type": "card"
+  },
+  {
+    "time": 221.55,
+    "type": "card"
+  },
+  {
+    "time": 222.1,
+    "type": "card"
+  },
+  {
+    "time": 222.65,
+    "type": "card"
+  },
+  {
+    "time": 230.07,
+    "type": "paper"
+  },
+  {
+    "time": 230.9,
+    "type": "card"
+  },
+  {
+    "time": 231.3,
+    "type": "card"
+  },
+  {
+    "time": 231.7,
+    "type": "card"
+  },
+  {
+    "time": 233.7,
+    "type": "card"
+  },
+  {
+    "time": 235.6,
+    "type": "card"
+  },
+  {
+    "time": 240.07,
+    "type": "paper"
+  },
+  {
+    "time": 244.3,
+    "type": "paper"
+  },
+  {
+    "time": 244.475,
+    "type": "card"
+  },
+  {
+    "time": 250.07,
+    "type": "paper"
+  },
+  {
+    "time": 250.8,
+    "type": "card"
+  },
+  {
+    "time": 252.2,
+    "type": "card"
+  },
+  {
+    "time": 254.3,
+    "type": "card"
+  },
+  {
+    "time": 260.07,
+    "type": "paper"
+  },
+  {
+    "time": 261.8,
+    "type": "card"
+  },
+  {
+    "time": 262.95,
+    "type": "card"
+  },
+  {
+    "time": 264.1,
+    "type": "card"
+  },
+  {
+    "time": 270.07,
+    "type": "paper"
+  },
+  {
+    "time": 272.6,
+    "type": "card"
+  },
+  {
+    "time": 274.4,
+    "type": "card"
+  },
+  {
+    "time": 280.07,
+    "type": "paper"
+  },
+  {
+    "time": 282.2,
+    "type": "card"
+  },
+  {
+    "time": 282.85,
+    "type": "card"
+  },
+  {
+    "time": 290.07,
+    "type": "paper"
+  },
+  {
+    "time": 291.2,
+    "type": "knock"
+  },
+  {
+    "time": 292.05,
+    "type": "knock"
+  },
+  {
+    "time": 292.9,
+    "type": "knock"
+  },
+  {
+    "time": 293.0,
+    "type": "card"
+  },
+  {
+    "time": 293.5,
+    "type": "card"
+  },
+  {
+    "time": 294.0,
+    "type": "card"
+  }
+]

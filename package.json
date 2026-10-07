@@ -1,0 +1,16 @@
+{
+  "name": "ttok-rules-motion",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "preview": "node render.mjs preview",
+    "build": "python3 build.py",
+    "audio": "python3 make_audio.py",
+    "export": "python3 export_all.py"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.100"
+  },
+  "description": "Landscape 30 fps JavaScript rules motion graphics"
+}
